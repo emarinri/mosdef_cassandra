@@ -111,18 +111,18 @@ jobs:
 - job: StandardMoSDeF
   strategy:
     matrix:
-      Python39Ubuntu:
-        imageName: 'ubuntu-20.04'
-        python.version: 3.9
-      Python38Ubuntu:
-        imageName: 'ubuntu-20.04'
-        python.version: 3.8
-      Python37macOS:
-        imageName: 'macOS-10.14'
-        python.version: 3.7
-      Python39macOS:
-        imageName: 'macOS-latest'
-        python.version: 3.9
+      Python310Ubuntu:
+        imageName: 'ubuntu-22.04'
+        python.version: 3.10
+      Python311Ubuntu:
+        imageName: 'ubuntu-22.04'
+        python.version: 3.11
+      Python10macOS:
+        imageName: 'macOS-14'
+        python.version: 3.10
+      Python311macOS:
+        imageName: 'macOS-14'
+        python.version: 3.11
 
   pool:
     vmImage: $(imageName)
@@ -159,4 +159,3 @@ jobs:
         python -m pip install --user pytest-azurepipelines
         python -m pytest mosdef_cassandra/tests -v
       displayName: Run Tests
-
